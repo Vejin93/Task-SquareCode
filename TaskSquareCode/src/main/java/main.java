@@ -21,13 +21,13 @@ public class main {
         String val = input.toLowerCase();
         List<String> listOfStrings = new ArrayList<String>();
 
-        for (int i = 0; i < val.length(); i += (int) sqrt(val.length())) {
+        for (int i = 0; i < val.length(); i += (int)sqrt(val.length())) {
             String retVal;
             if (i + (int) sqrt(val.length() + 1) > val.length()) {
                 retVal = val.substring(i);
                 listOfStrings.add(retVal);
             } else {
-                retVal = val.substring(i, i + (int) sqrt(val.length() + 1));
+                retVal = val.substring(i, i + (int)sqrt(val.length()));
                 listOfStrings.add(retVal);
             }
         }
@@ -37,6 +37,21 @@ public class main {
         }
         System.out.println("======================");
 
-        
+        List<String> retVal2 = new ArrayList<String>();
+
+        for (int i = 0; i < listOfStrings.get(0).length(); i++) {
+            String retVal3 = "";
+            for (String s : listOfStrings) {
+                if(s.length()>i)
+                retVal3 = retVal3 + s.charAt(i);
+            }
+            retVal2.add(retVal3);
+        }
+
+        System.out.println("\n----------------------");
+        for (String s : retVal2) {
+            System.out.print(s + "\t");
+        }
+        System.out.println("\n----------------------");
     }
 }
